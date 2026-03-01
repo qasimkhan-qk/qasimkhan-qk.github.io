@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Qasim Khan — Portfolio</title>
   <meta name="description" content="Technical Support Engineer with experience in Microsoft 365, Active Directory, networking, VoIP, UML modeling, technical writing, and script writing." />
+  <!-- Link to CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -33,8 +34,8 @@
       </p>
       <div class="cta">
         <a class="btn" href="#experience">View Experience</a>
-        <!-- WhatsApp CTA with prefilled message -->
-        <a class="btn btn-wa" href="https://wa.me/923177889782?text=Hi%2C%20thank%20you%20for%20contacting%20Qasim%20Khan.%20I%20will%20be%20in%20touch%20shortly." target="_blank" rel="noopener">Contact Me on WhatsApp</a>
+        <!-- Per your instruction: this button routes ONLY to Contact (no WhatsApp) -->
+        <a class="btn" href="#contact">Contact Me</a>
       </div>
     </div>
   </section>
@@ -101,8 +102,7 @@
         <li>Explained software design/architecture concepts for technical and non‑technical audiences.</li>
         <li>Optimized articles for search (SEO), contributing to first‑page rankings on UML topics.</li>
       </ul>
-
-      <!-- 🔵 These are the two buttons you wanted colored & prominent -->
+      <!-- Prominent gradient buttons as requested -->
       <div class="card-actions">
         <a class="btn btn-gradient" href="https://www.edrawmax.com/templates/users/5165108/" target="_blank" rel="noopener">Template Portfolio</a>
         <a class="btn btn-gradient" href="https://edrawmax.wondershare.com/examples/class-diagram-examples.html" target="_blank" rel="noopener">Ranked Article</a>
@@ -178,14 +178,21 @@
     <ul class="contact-list">
       <li><strong>Email:</strong> <a href="mailto:qasimkhatter@gmail.com">qasimkhatter@gmail.com</a></li>
       <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/qasm-khan" target="_blank" rel="noopener">linkedin.com/in/qasm-khan</a></li>
-      <li>
-        <strong>Phone:</strong>
-        <a href="tel:+923177889782">+92 317 788 9782</a>
-        <!-- WhatsApp inline button next to phone -->
-        <a class="btn btn-wa btn-inline" href="https://wa.me/923177889782?text=Hi%2C%20thank%20you%20for%20contacting%20Qasim%20Khan.%20I%20will%20be%20in%20touch%20shortly." target="_blank" rel="noopener">WhatsApp</a>
-      </li>
+      <li><strong>Phone:</strong> <a href="tel:+923177889782">+92 317 788 9782</a></li>
       <li><strong>Location:</strong> Wah Cantt, Rawalpindi, Pakistan</li>
     </ul>
+
+    <!-- WhatsApp CTA below phone (as you prefer), with prefilled message -->
+    <div class="contact-actions">
+      <a
+        class="btn btn-wa"
+        target="_blank"
+        rel="noopener"
+        href="https://wa.me/923177889782?text=Hi%2C%20thank%20you%20for%20contacting%20Qasim%20Khan.%20I%20will%20be%20in%20touch%20shortly."
+      >
+        WhatsApp
+      </a>
+    </div>
   </section>
 
   <!-- ===================== FOOTER ===================== -->
@@ -193,6 +200,7 @@
     <p>© <span id="year"></span> Qasim Khan — Built with HTML/CSS/JS • Hosted on GitHub Pages</p>
   </footer>
 
+  <!-- Link to JS -->
   <script src="script.js"></script>
 </body>
 </html>
