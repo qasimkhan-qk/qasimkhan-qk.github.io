@@ -4,7 +4,7 @@
    ========================= */
 
 /* ---------- Theme Tokens ---------- */
-:root {
+:root{
   --bg: #0b0d10;           /* deep charcoal */
   --fg: #e8ecf3;           /* soft white */
   --muted: #aab2c5;        /* muted text */
@@ -14,8 +14,7 @@
   --border: #1b2230;       /* borders & separators */
   --shadow: 0 10px 30px rgba(0,0,0,.35);
 }
-
-:root.light {
+:root.light{
   --bg: #ffffff;
   --fg: #14171b;
   --muted: #556070;
@@ -27,10 +26,10 @@
 }
 
 /* ---------- Base ---------- */
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
   font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
   background:
     radial-gradient(1200px 600px at 10% -10%, rgba(92,200,255,.20), transparent 60%),
@@ -41,115 +40,101 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-.container { width: min(1100px, 92%); margin-inline: auto; }
-.section { padding: 80px 0; }
-h1, h2, h3 { line-height: 1.2; margin: 0 0 14px; }
-h1 { font-size: clamp(30px, 4.5vw, 46px); letter-spacing: .2px; }
-h2 { font-size: clamp(24px, 3.4vw, 32px); }
-h3 { font-size: clamp(18px, 2.6vw, 22px); }
-p { margin: 0 0 12px; color: var(--muted); }
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
-.accent { color: var(--accent); }
+.container{width:min(1100px, 92%); margin-inline:auto}
+.section{padding:80px 0}
+h1,h2,h3{line-height:1.2;margin:0 0 14px}
+h1{font-size: clamp(30px, 4.5vw, 46px)}
+h2{font-size: clamp(24px, 3.4vw, 32px)}
+h3{font-size: clamp(18px, 2.6vw, 22px)}
+p{margin:0 0 12px;color:var(--muted)}
+a{color: var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+.accent{color:var(--accent)}
 
 /* ---------- Header / Nav (glass) ---------- */
-.site-header {
-  position: sticky; top: 0; z-index: 50;
-  backdrop-filter: saturate(150%) blur(10px);
+.site-header{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter:saturate(150%) blur(10px);
   background: color-mix(in oklab, var(--bg), transparent 30%);
-  border-bottom: 1px solid var(--border);
+  border-bottom:1px solid var(--border);
 }
-.nav {
-  display: flex; align-items: center; gap: 18px;
-  width: min(1100px, 92%); margin-inline: auto; padding: 12px 0;
+.nav{
+  display:flex;align-items:center;gap:18px;
+  width:min(1100px, 92%); margin-inline:auto; padding:12px 0;
 }
-.nav a {
-  color: var(--fg); opacity: .95; font-weight: 600; letter-spacing: .2px;
-  padding: 8px 10px; border-radius: 10px;
-  transition: background .15s ease, color .15s ease, transform .15s ease;
+.logo{font-weight:900;letter-spacing:.2px;color:var(--fg)}
+.nav a{color:var(--fg);opacity:.95;font-weight:600;letter-spacing:.2px;padding:8px 10px;border-radius:10px;transition:background .15s ease, transform .15s ease}
+.nav a:hover{background: color-mix(in oklab, var(--card), transparent 60%); transform: translateY(-1px)}
+#themeToggle{
+  margin-left:auto;border:1px solid var(--border);background:transparent;color:var(--fg);
+  padding:8px 10px;border-radius:10px;cursor:pointer;transition:transform .15s ease, background .15s ease
 }
-.nav a:hover { background: color-mix(in oklab, var(--card), transparent 60%); transform: translateY(-1px); }
-#themeToggle {
-  margin-left: auto;
-  border: 1px solid var(--border); background: transparent; color: var(--fg);
-  padding: 8px 10px; border-radius: 10px; cursor: pointer;
-  transition: transform .15s ease, background .15s ease;
-}
-#themeToggle:hover { transform: translateY(-1px); background: color-mix(in oklab, var(--card), transparent 70%); }
+#themeToggle:hover{transform:translateY(-1px);background: color-mix(in oklab, var(--card), transparent 70%)}
 
 /* ---------- Hero ---------- */
-.hero {
-  display: grid; grid-template-columns: 1fr; gap: 22px; align-items: center;
-}
-.hero .subtitle { font-weight: 700; color: var(--fg); letter-spacing: .2px; }
-.hero .tagline { max-width: 70ch; }
-.cta { margin-top: 14px; display: flex; gap: 12px; flex-wrap: wrap; }
+.hero{display:grid;grid-template-columns:1fr;gap:22px;align-items:center}
+.hero .subtitle{font-weight:700;color:var(--fg)}
+.hero .tagline{max-width:70ch}
+.cta{margin-top:14px;display:flex;gap:12px;flex-wrap:wrap}
 
-.btn {
-  display: inline-block; padding: 11px 16px; border-radius: 12px;
+/* Base button */
+.btn{
+  display:inline-block;padding:11px 16px;border-radius:12px;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: #00151f; font-weight: 800; letter-spacing: .2px;
-  box-shadow: var(--shadow);
-  transition: transform .12s ease, filter .12s ease, box-shadow .12s ease;
+  color:#00151f;font-weight:800;letter-spacing:.2px;
+  box-shadow:var(--shadow);
+  transition:transform .12s ease, filter .12s ease, box-shadow .12s ease;
+  text-decoration:none;
 }
-.btn:hover { transform: translateY(-2px); filter: saturate(1.05); box-shadow: 0 14px 36px rgba(0,0,0,.35); }
-.btn.ghost {
-  background: transparent; color: var(--fg);
-  border: 1px solid var(--border);
-  box-shadow: none;
+.btn:hover{transform:translateY(-2px);filter:saturate(1.05);box-shadow:0 14px 36px rgba(0,0,0,.35)}
+.btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--border);box-shadow:none}
+
+/* WhatsApp green button (hero + contact) */
+.btn-wa{
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color:#062b11;
+  border:1px solid color-mix(in oklab, #128C7E, #000 15%);
 }
+.btn-inline{padding:6px 10px;font-size:14px;border-radius:10px}
 
 /* ---------- Cards / Lists ---------- */
-.card {
-  background: linear-gradient(180deg,
-    color-mix(in oklab, var(--card), transparent 5%),
-    color-mix(in oklab, var(--card), transparent 0%));
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: var(--shadow);
-  animation: fadeInUp .6s ease both;
+.card{
+  background: linear-gradient(180deg, color-mix(in oklab, var(--card), transparent 5%), color-mix(in oklab, var(--card), transparent 0%));
+  border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:var(--shadow);animation:fadeInUp .6s ease both
 }
-.role + .role { margin-top: 16px; }
-.role-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-.meta { color: var(--muted); font-size: 14px; }
+.role + .role{margin-top:16px}
+.role-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.meta{color:var(--muted);font-size:14px}
+.list{padding-left:18px;margin:8px 0 0}
+.list li{margin-bottom:6px}
 
-.list { padding-left: 18px; margin: 8px 0 0; }
-.list li { margin-bottom: 6px; }
-
-.card-actions { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
-.card-actions a {
-  display: inline-block; padding: 8px 12px; border-radius: 10px;
-  background: color-mix(in oklab, var(--card), transparent 20%);
-  border: 1px solid var(--border); color: var(--fg);
-  transition: transform .12s ease, background .12s ease;
-}
-.card-actions a:hover { transform: translateY(-1px); background: color-mix(in oklab, var(--card), transparent 0%); }
-
-.chip-list { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; list-style: none; margin: 8px 0 0; }
-.chip-list li {
-  border: 1px solid var(--border); background: color-mix(in oklab, var(--card), transparent 8%);
-  color: var(--fg); padding: 8px 12px; border-radius: 999px; font-weight: 600;
+/* 🔵 Prominent gradient buttons under the Wondersahre card */
+.card-actions{display:flex;gap:12px;margin-top:14px;flex-wrap:wrap}
+.btn-gradient{
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+  color:#0b0d10;
+  border:1px solid color-mix(in oklab, var(--accent-2), #000 20%);
 }
 
-/* ---------- Contact ---------- */
-.contact-list { list-style: none; padding: 0; margin: 10px 0 0; }
-.contact-list li { margin-bottom: 6px; }
-
-/* ---------- Footer ---------- */
-.site-footer {
-  border-top: 1px solid var(--border);
-  text-align: center; padding: 22px; color: var(--muted);
+/* Skills chips */
+.chip-list{display:flex;flex-wrap:wrap;gap:10px;padding:0;list-style:none;margin:8px 0 0}
+.chip-list li{
+  border:1px solid var(--border);background: color-mix(in oklab, var(--card), transparent 8%);
+  color:var(--fg);padding:8px 12px;border-radius:999px;font-weight:600
 }
 
-/* ---------- Animations ---------- */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
+/* Contact & Footer */
+.contact-list{list-style:none;padding:0;margin:10px 0 0}
+.contact-list li{margin-bottom:6px}
+.site-footer{border-top:1px solid var(--border);text-align:center;padding:22px;color:var(--muted)}
+
+/* Animations */
+@keyframes fadeInUp{
+  from{opacity:0;transform:translateY(8px)}
+  to{opacity:1;transform:translateY(0)}
 }
 
-/* ---------- Responsive ---------- */
-@media (max-width: 900px) {
-  #themeToggle { margin-left: 0; }
+/* Responsive */
+@media (max-width:900px){
+  #themeToggle{margin-left:0}
 }
