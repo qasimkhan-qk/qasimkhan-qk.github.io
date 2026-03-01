@@ -3,11 +3,10 @@
    JS: theme toggle + year + smooth scroll
    ========================= */
 
-// Theme toggle with saved preference
+// Restore saved theme & toggle
 const root = document.documentElement;
 const toggle = document.getElementById('themeToggle');
 const saved = localStorage.getItem('theme');
-
 if (saved === 'light') root.classList.add('light');
 
 toggle?.addEventListener('click', () => {
@@ -15,7 +14,7 @@ toggle?.addEventListener('click', () => {
   localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
 });
 
-// Dynamic current year in footer
+// Dynamic current year
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
@@ -30,4 +29,3 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }
   });
 });
-``
