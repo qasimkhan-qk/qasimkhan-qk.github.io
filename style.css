@@ -5,13 +5,13 @@
 
 /* ---------- Theme Tokens ---------- */
 :root{
-  --bg: #0b0d10;           /* deep charcoal */
-  --fg: #e8ecf3;           /* soft white */
-  --muted: #aab2c5;        /* muted text */
-  --accent: #5cc8ff;       /* cyan accent */
-  --accent-2: #8b5cff;     /* secondary accent (violet) */
-  --card: #10141a;         /* card surface */
-  --border: #1b2230;       /* borders & separators */
+  --bg: #0b0d10;
+  --fg: #e8ecf3;
+  --muted: #aab2c5;
+  --accent: #5cc8ff;      /* cyan */
+  --accent-2: #8b5cff;    /* violet */
+  --card: #10141a;
+  --border: #1b2230;
   --shadow: 0 10px 30px rgba(0,0,0,.35);
 }
 :root.light{
@@ -22,7 +22,7 @@
   --accent-2: #7c3aed;
   --card: #f6f8fc;
   --border: #e6eaf2;
-  --shadow: 0 10px 25px rgba(8, 41, 69, .10);
+  --shadow: 0 10px 25px rgba(8,41,69,.10);
 }
 
 /* ---------- Base ---------- */
@@ -40,18 +40,18 @@ body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.container{width:min(1100px, 92%); margin-inline:auto}
+.container{width:min(1100px,92%);margin-inline:auto}
 .section{padding:80px 0}
 h1,h2,h3{line-height:1.2;margin:0 0 14px}
-h1{font-size: clamp(30px, 4.5vw, 46px)}
-h2{font-size: clamp(24px, 3.4vw, 32px)}
-h3{font-size: clamp(18px, 2.6vw, 22px)}
+h1{font-size:clamp(30px,4.5vw,46px)}
+h2{font-size:clamp(24px,3.4vw,32px)}
+h3{font-size:clamp(18px,2.6vw,22px)}
 p{margin:0 0 12px;color:var(--muted)}
-a{color: var(--accent); text-decoration:none}
+a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 .accent{color:var(--accent)}
 
-/* ---------- Header / Nav (glass) ---------- */
+/* ---------- Header / Nav ---------- */
 .site-header{
   position:sticky;top:0;z-index:50;
   backdrop-filter:saturate(150%) blur(10px);
@@ -60,14 +60,14 @@ a:hover{text-decoration:underline}
 }
 .nav{
   display:flex;align-items:center;gap:18px;
-  width:min(1100px, 92%); margin-inline:auto; padding:12px 0;
+  width:min(1100px,92%);margin-inline:auto;padding:12px 0;
 }
 .logo{font-weight:900;letter-spacing:.2px;color:var(--fg)}
-.nav a{color:var(--fg);opacity:.95;font-weight:600;letter-spacing:.2px;padding:8px 10px;border-radius:10px;transition:background .15s ease, transform .15s ease}
-.nav a:hover{background: color-mix(in oklab, var(--card), transparent 60%); transform: translateY(-1px)}
+.nav a{color:var(--fg);opacity:.95;font-weight:600;letter-spacing:.2px;padding:8px 10px;border-radius:10px;transition:background .15s ease,transform .15s ease}
+.nav a:hover{background: color-mix(in oklab, var(--card), transparent 60%);transform:translateY(-1px)}
 #themeToggle{
   margin-left:auto;border:1px solid var(--border);background:transparent;color:var(--fg);
-  padding:8px 10px;border-radius:10px;cursor:pointer;transition:transform .15s ease, background .15s ease
+  padding:8px 10px;border-radius:10px;cursor:pointer;transition:transform .15s ease,background .15s ease
 }
 #themeToggle:hover{transform:translateY(-1px);background: color-mix(in oklab, var(--card), transparent 70%)}
 
@@ -77,29 +77,33 @@ a:hover{text-decoration:underline}
 .hero .tagline{max-width:70ch}
 .cta{margin-top:14px;display:flex;gap:12px;flex-wrap:wrap}
 
-/* Base button */
+/* Buttons */
 .btn{
   display:inline-block;padding:11px 16px;border-radius:12px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  background: linear-gradient(135deg, var(--accent), var(--accent-2)); /* cyan→violet */
   color:#00151f;font-weight:800;letter-spacing:.2px;
   box-shadow:var(--shadow);
-  transition:transform .12s ease, filter .12s ease, box-shadow .12s ease;
-  text-decoration:none;
+  transition:transform .12s ease,filter .12s ease,box-shadow .12s ease;
 }
 .btn:hover{transform:translateY(-2px);filter:saturate(1.05);box-shadow:0 14px 36px rgba(0,0,0,.35)}
 .btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--border);box-shadow:none}
 
-/* WhatsApp green button (hero + contact) */
+/* WhatsApp green button */
 .btn-wa{
+  display:inline-block;padding:11px 16px;border-radius:12px;
   background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-  color:#062b11;
+  color:#062b11;font-weight:800;letter-spacing:.2px;
   border:1px solid color-mix(in oklab, #128C7E, #000 15%);
+  box-shadow:var(--shadow);
+  transition:transform .12s ease,filter .12s ease,box-shadow .12s ease;
 }
-.btn-inline{padding:6px 10px;font-size:14px;border-radius:10px}
+.btn-wa:hover{transform:translateY(-2px);filter:saturate(1.05);box-shadow:0 14px 36px rgba(0,0,0,.35)}
 
-/* ---------- Cards / Lists ---------- */
+/* Cards / Lists */
 .card{
-  background: linear-gradient(180deg, color-mix(in oklab, var(--card), transparent 5%), color-mix(in oklab, var(--card), transparent 0%));
+  background: linear-gradient(180deg,
+    color-mix(in oklab, var(--card), transparent 5%),
+    color-mix(in oklab, var(--card), transparent 0%));
   border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:var(--shadow);animation:fadeInUp .6s ease both
 }
 .role + .role{margin-top:16px}
@@ -108,13 +112,17 @@ a:hover{text-decoration:underline}
 .list{padding-left:18px;margin:8px 0 0}
 .list li{margin-bottom:6px}
 
-/* 🔵 Prominent gradient buttons under the Wondersahre card */
+/* Gradient buttons under Wondershare card */
 .card-actions{display:flex;gap:12px;margin-top:14px;flex-wrap:wrap}
 .btn-gradient{
+  display:inline-block;padding:10px 16px;border-radius:12px;
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
-  color:#0b0d10;
+  color:#0b0d10;font-weight:700;letter-spacing:.2px;
   border:1px solid color-mix(in oklab, var(--accent-2), #000 20%);
+  box-shadow:var(--shadow);
+  transition:transform .12s ease,filter .12s ease,box-shadow .12s ease;text-decoration:none
 }
+.btn-gradient:hover{transform:translateY(-2px);filter:saturate(1.05);box-shadow:0 14px 36px rgba(0,0,0,.35)}
 
 /* Skills chips */
 .chip-list{display:flex;flex-wrap:wrap;gap:10px;padding:0;list-style:none;margin:8px 0 0}
@@ -126,13 +134,11 @@ a:hover{text-decoration:underline}
 /* Contact & Footer */
 .contact-list{list-style:none;padding:0;margin:10px 0 0}
 .contact-list li{margin-bottom:6px}
+.contact-actions{margin-top:14px;display:flex;gap:12px;flex-wrap:wrap}
 .site-footer{border-top:1px solid var(--border);text-align:center;padding:22px;color:var(--muted)}
 
 /* Animations */
-@keyframes fadeInUp{
-  from{opacity:0;transform:translateY(8px)}
-  to{opacity:1;transform:translateY(0)}
-}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
 /* Responsive */
 @media (max-width:900px){
